@@ -7,17 +7,19 @@
 
 ### 创建 TRTC 对象
 ```js
-const TRTCCloud = require('trtc-electron-sdk').default;
-// import TRTCCloud from 'trtc-electron-sdk';
+const TRTCCloud = require('trtc-electron-sdk');
 this.rtcCloud = new TRTCCloud();
 ```
 
-从v7.9.348起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 typescript 的开发者
+从v7.0.149起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 typescript 的开发者
 
 ```javascript
-import TRTCCloud from 'trtc-electron-sdk';
+// 开启了 ES Module 融合模式 (esModuleInterop=true)
+import * as trtc_namespace from 'trtc-electron-sdk';
 
-const rtcCloud: TRTCCloud = new TRTCCloud();
+const TRTCCloud = require('trtc-electron-sdk');
+
+const rtcCloud: trtc_namespace.TRTCCloud = new TRTCCloud();
 // 获取 SDK 版本号
 rtcCloud.getSDKVersion();
 ```
